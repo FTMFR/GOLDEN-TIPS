@@ -36,3 +36,12 @@ Use when you want to optimize the result of an expensive function call based on 
 #useCallback:
 Use when you want to prevent child components from re-rendering unnecessarily due to prop changes, especially if the prop is a function itself.
 
+**
+//
+**
+
+##useState-hook
+#The Asynchronous Nature of useState and Using useEffect
+The useState hook in React is asynchronous, meaning that the state updates are not immediate. When you call useState to update the state, the code continues to execute without waiting for the state update to complete. This can lead to unexpected behavior, such as seeing outdated state values in UI updates.
+To handle the asynchronous nature of useState, you can use the useEffect hook. The useEffect hook allows you to perform side effects, which are actions that may have an impact outside of the component's rendering process. In this case, you can use useEffect to execute code that takes time, such as fetching data from an API, and then update the state with the result.
+There are other ways to handle asynchronous operations in React, such as using libraries like react-async or redux-thunk. However, useEffect is a general-purpose hook that can be used for a variety of side effects, including asynchronous tasks.

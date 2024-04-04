@@ -1,0 +1,38 @@
+##Diffrences betwen useMemo and useCallback
+#useMemo:
+1. What it returns: When the component renders, the function is called and its return 'value' is stored.
+2. Dependency Array: Controls when the value or function is recalculated; If the dependencies haven't changed since the last render, the memoized 'value' is returned without re-running the 'function'.
+3. Use case: Expensive calculations based on props or state; This can be useful for 'expensive calculations' that don't need to be done on every render if the 'underlying data' hasn't changed.
+
+**example: 
+const isEven = useMemo(() => {
+    let index = 0;
+    while (index < 200000000) {
+    index++;
+    }
+    return firstCount % 2 === 0;
+}, [firstCount]);
+
+
+#useCallback: 
+1. What it returns: The first time the component renders, the 'function' is stored.
+2. Dependency Array: Controls when the function reference is recreated; On subsequent renders, if the dependencies haven't changed, the same 'function' reference is returned.
+3. Use case: Preventing child component re-renders due to prop changes; This is useful for preventing 'child components' from re-rendering unnecessarily if the 'function' they receive as a prop hasn't changed.
+
+**example:
+const addCounter = useCallback(() => {
+    setCounter((prev) => prev + 1);
+}, [counter]);
+
+
+##Similarity betwen useMemo and useCallback
+1. Both hooks rely on dependency arrays to determine when to re-run the 'function' or return the memoized 'value'.
+2. Overusing these hooks can add complexity to your code, so use them judiciously for performance bottlenecks.
+
+##Choosing Between useMemo and useCallback:
+#useMemo:
+Use when you want to optimize the result of an expensive function call based on its dependencies.
+
+#useCallback:
+Use when you want to prevent child components from re-rendering unnecessarily due to prop changes, especially if the prop is a function itself.
+

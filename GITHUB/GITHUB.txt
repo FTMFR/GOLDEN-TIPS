@@ -1,0 +1,18 @@
+best practice for write plain text in github repo:
+
+#Content-Purpose
+1. Clarity: Use clear and concise language that is easy for anyone to understand, regardless of technical background, like english.
+2. Purpose: Clearly define the purpose of the plain text file in the first few lines. Is it a README, a license, a list of guidelines, or something else?
+3. Organization: Structure the content logically using headings, bullet points, and code blocks for better readability.
+
+#Formatting
+1. Line Breaks: Use consistent line breaks to improve visual separation and readability.
+2. Whitespace: Use whitespace strategically to separate sections and emphasize important information. Tabs or spaces are acceptable, but maintain consistency.
+3. Markdown (Optional): While plain text doesn't require Markdown formatting, some basic Markdown elements can enhance readability. Consider using:
+    Headers (#, ##, etc.) for section titles.
+    Bullet points (*) and numbered lists (1., 2., etc.) for lists.
+    Code blocks with indentation (usually 4 spaces before each line) for displaying code snippets.
+
+#File-Naming
+1. Descriptive: Choose clear and descriptive file names that represent the content accurately.
+2. Common Extensions: While not strictly necessary for plain text, consider using common extensions like (.txt) or (.md) for better organization and recognition within the repository.

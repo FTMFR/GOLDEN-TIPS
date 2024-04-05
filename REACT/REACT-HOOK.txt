@@ -45,3 +45,17 @@ Use when you want to prevent child components from re-rendering unnecessarily du
 The useState hook in React is asynchronous, meaning that the state updates are not immediate. When you call useState to update the state, the code continues to execute without waiting for the state update to complete. This can lead to unexpected behavior, such as seeing outdated state values in UI updates.
 To handle the asynchronous nature of useState, you can use the useEffect hook. The useEffect hook allows you to perform side effects, which are actions that may have an impact outside of the component's rendering process. In this case, you can use useEffect to execute code that takes time, such as fetching data from an API, and then update the state with the result.
 There are other ways to handle asynchronous operations in React, such as using libraries like react-async or redux-thunk. However, useEffect is a general-purpose hook that can be used for a variety of side effects, including asynchronous tasks.
+
+
+**
+//
+**
+
+
+##HOC
+HOC stands for Higher-order component. it's pattern used in 'React' for reusing componen't logic.
+it's a function that takes an existing component and wraps it with some additional functionality. you can add features like authentication, styling or data fetching to multiple component without having to write that code repeatedly.
+Here's a auick breakdown of how HOCs work:
+1. Define the HOC function: this function takes a component as an argument (often called the wrapped component).
+2. Add functionality: inside the function, you write the code that add extra features you want. 
+3. Return a new component: the HOC function return a new component that incorporates the wrapped compoentn and the added functionality.

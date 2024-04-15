@@ -81,3 +81,34 @@ expamle: like a component displaying a list - you only want it to re-render if t
 Use Case: useMemo is for values or computations within a component. we can use it to wrap an expensive calculation or function.
 if the values it uses (like props or state) haven't changed, useMemo will return the prevoius result instead of re-doing calculation.
 example: it's like caching a result to avoid extra work.
+
+
+**
+//
+**
+
+Breakdown of the key differences between useEffect and useLayoutEffect in React:
+
+##Similarities:
+
+Both useEffect and useLayoutEffect are React Hooks used to perform side effects in functional components.
+They both accept a callback function that defines the side effect to be executed.
+You can optionally pass a dependency array as the second argument to specify when the effect should re-run.
+Key Difference: Timing of Execution
+
+##useEffect 
+This is the more commonly used hook. It executes the side effect after the DOM has been updated and painted. This means any changes made within the effect won't be reflected immediately on the screen.
+
+##useLayoutEffect
+This hook runs the side effect synchronously after the DOM has been calculated for changes, but before the browser paints the screen. This allows you to potentially influence the initial layout of the component.
+
+Use Cases:
+useEffect: Ideal for most side effects that don't require immediate DOM manipulation. This includes data fetching, subscriptions, setting timers, or performing actions after the component has rendered.
+useLayoutEffect: Use this sparingly for specific scenarios where you need to influence the initial layout. Examples include:
+Measuring DOM elements after the initial render.
+Animating or transitioning elements based on initial layout.
+Reading layout properties from the DOM (use with caution due to potential performance implications).
+Choosing Between useEffect and useLayoutEffect
+
+In most cases, you'll want to use useEffect due to its simpler execution timing and potential for better performance.
+If you're certain you need to affect the initial layout synchronously, then useLayoutEffect might be appropriate. However, be aware of potential performance issues and use it judiciously.

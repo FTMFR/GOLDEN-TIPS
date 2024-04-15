@@ -1,4 +1,4 @@
-##Diffrences betwen useMemo and useCallback
+##Diffrences between useMemo and useCallback
 #useMemo:
 1. What it returns: When the component renders, the function is called and its return 'value' is stored.
 2. Dependency Array: Controls when the value or function is recalculated; If the dependencies haven't changed since the last render, the memoized 'value' is returned without re-running the 'function'.
@@ -59,3 +59,25 @@ Here's a auick breakdown of how HOCs work:
 1. Define the HOC function: this function takes a component as an argument (often called the wrapped component).
 2. Add functionality: inside the function, you write the code that add extra features you want. 
 3. Return a new component: the HOC function return a new component that incorporates the wrapped compoentn and the added functionality.
+
+
+
+**
+//
+**
+
+
+Similarity between useMemo and memo in React:
+Both of them are tools in React to improve performance.
+
+
+Diffrences between useMemo and memo in React:
+##memo
+Use Case: React.memo is for entire components. we wrap component with React.memo to prevent it from re-rendering if its props haven't changed. 
+expamle: like a component displaying a list - you only want it to re-render if the list items themselced change, not beacause some other part of the app re-rendered.
+
+
+##useMemo
+Use Case: useMemo is for values or computations within a component. we can use it to wrap an expensive calculation or function.
+if the values it uses (like props or state) haven't changed, useMemo will return the prevoius result instead of re-doing calculation.
+example: it's like caching a result to avoid extra work.

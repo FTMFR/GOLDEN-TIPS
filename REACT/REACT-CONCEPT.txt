@@ -1,0 +1,35 @@
+**
+//
+**
+
+What is pure and impure function is?
+In programming, functions are reusable blocks of code that perform specific tasks. We can categorize them based on their behavior: pure functions and impure functions.
+
+##Pure Function:
+Definition: a pure function is a function that, given the same input, will always return the same output and doesn't produce any side effects.
+
+Characteristics:
+1. No side effects: this means the function doesn't modify any external state like global variables or perform actions like file I/O, network calls, Dom manipulation.
+2. Deterministic output: for a specific set of inputes, the function's output is always predictable.
+3. Easier to test and reason about: since their behavoir solely relies on the inputs, they are more straightforward to test and undrestand.
+
+
+##Impure function:
+Definition: An impure function is a function that can have side effects or doesn't necessarily return the same output for the same set of inputs.
+
+Characteristics:
+1. Side effects: Impure functions can modify external state, perform I/O operations, or interact with the outside world.
+2. Non-deterministic output: The output may vary depending on the external state or factors outside the function's control.
+3. Can be trickier to test and reason about: Due to their dependence on external factors, testing and understanding their behavior can be more complex.
+
+**
+//
+**
+Higher-Order Functions (HOFs) and Higher-Order Components (HOCs) in React
+##HOF
+HOFs are functions that take other functions as arguments or return a function. 
+
+##HOC:
+HOCs are a pattern in React for creating reusable components that wrap other components and add functionality. 
+
+**Both HOFs and HOCs often rely on pure functions for their core logic.
